@@ -1,0 +1,278 @@
+:root {
+        --azul-bg: #0ea5e9;
+        --azul-card: #0284c7;
+        --amarelo: #facc15;
+        --preto: #181818;
+      }
+        /* CORPO DO TEXTO */
+        body, p, small, li, button, span {
+        font-family: 'Poppins', sans-serif;
+        }
+
+        /* TÍTULOS */
+        h1, h2 {
+        font-family: 'Permanent Marker', cursive;
+        letter-spacing: 3px;
+        }
+
+      body {
+        margin: 0;
+        background: var(--azul-bg);
+        color: #fff;
+      }
+
+      /* bloqueio de scroll quando modal aberto */
+      .no-scroll {
+        overflow: hidden;
+      }
+
+      h1 {
+        text-align: center;
+        padding: 22px;
+        font-size: 38px;
+        font-weight: 700;
+        text-shadow: 0 2px 3px #00000033;
+        color: var(--amarelo);
+      }
+      a{
+        color: var(--amarelo);
+      }
+      .cards {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        width: 200px;
+        background: var(--azul-card);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        border: 3px solid var(--amarelo);
+        transition: 0.25s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        background: #0369a1;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .card span {
+        font-size: 65px;
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        line-height: 60px;
+        color: var(--amarelo);
+      }
+
+      .acessar-btn {
+        margin-top: 15px;
+        background: var(--amarelo);
+        color: var(--preto);
+        border: none;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 13px;
+        transition: 0.25s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .acessar-btn:hover {
+        transform: scale(1.05);
+        background: #ffd233;
+      }
+
+      .section {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+
+      .section h2 {
+        color: var(--amarelo);
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .section p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 80px;
+      }
+
+      /* ===== MODAL ===== */
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #00000099;
+        backdrop-filter: blur(6px);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        padding: 20px;
+        animation: overlayIn 0.25s ease both;
+      }
+
+      .modal-content {
+        background: var(--azul-card);
+        width: 65%;
+        max-width: 960px;
+        border-radius: 14px;
+        padding: 30px;
+        border: 3px solid var(--amarelo);
+        max-height: 85vh;
+        overflow-y: auto;
+        animation: contentIn 0.25s ease both;
+      }
+
+      .modal.closing {
+        animation: overlayOut 0.25s ease both;
+      }
+      .modal.closing .modal-content {
+        animation: contentOut 0.25s ease both;
+      }
+
+      @keyframes overlayIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes overlayOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes contentIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes contentOut {
+        from {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .modal-header img {
+        width: 26px;
+      }
+
+      .close {
+        cursor: pointer;
+        font-size: 30px;
+        margin-left: auto;
+        font-weight: 600;
+        transition: 0.2s;
+      }
+      .close:hover {
+        color: var(--amarelo);
+      }
+
+      .modal-body {
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      .material-btn {
+        margin-top: 20px;
+        background: var(--amarelo);
+        color: var(--preto);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .material-btn:hover {
+        transform: scale(1.05);
+        background: #ffd233;
+      }
+
+      /*RESPONSIVO*/
+      @media (max-width: 780px) {
+        h1 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        section.h2{
+        font-size: 20px;
+          font-weight: bold;
+          letter-spacing: 10px;
+        }
+        .card {
+          width: 42%;
+          padding: 16px;
+        }
+        .modal-content {
+          width: 90%;
+          padding: 20px;
+        }
+        .modal-header {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        h1 {
+            margin-bottom: -10px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .card {
+          width: 100%;
+        }
+      }

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Sprint Framework</title>
+    <link />
+
+    <!-- Fontes Personalizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <!-- Fonte Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Design Sprint Framework</h1>
+
+    <div class="cards">
+      <div class="card" data-day="1">
+        <h2>Segunda-feira</h2>
+        <p>Mapear</p>
+        <span>1</span>
+        <button class="acessar-btn">
+          <img
+            src="images/External link.svg"
+            width="18"
+          />
+          Acessar conteúdo
+        </button>
+      </div>
+
+      <div class="card" data-day="2">
+        <h2>Terça-feira</h2>
+        <p>Esboçar</p>
+        <span>2</span>
+        <button class="acessar-btn">
+          <img
+            src="images/External link.svg"
+            width="18"
+          />
+          Acessar conteúdo
+        </button>
+      </div>
+
+      <div class="card" data-day="3">
+        <h2>Quarta-feira</h2>
+        <p>Decidir</p>
+        <span>3</span>
+        <button class="acessar-btn">
+          <img
+            src="images/External link.svg"
+            width="18"
+          />
+          Acessar conteúdo
+        </button>
+      </div>
+
+      <div class="card" data-day="4">
+        <h2>Quinta-feira</h2>
+        <p>Prototipar</p>
+        <span>4</span>
+        <button class="acessar-btn">
+          <img
+            src="images/External link.svg"
+            width="18"
+          />
+          Acessar conteúdo
+        </button>
+      </div>
+
+      <div class="card" data-day="5">
+        <h2>Sexta-feira</h2>
+        <p>Testar</p>
+        <span>5</span>
+        <button class="acessar-btn">
+          <img
+            src="images/External link.svg"
+            width="18"
+          />
+          Acessar conteúdo
+        </button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>O que é o Design Sprint?</h2>
+      <p>
+        O Design Sprint é uma metodologia comprovada para resolver problemas por
+        meio de design, prototipagem e teste de ideias com os usuários. Os
+        Design Sprints alinham rapidamente as equipes sob uma visão
+        compartilhada com metas e entregas claramente definidas. Em última
+        análise, é uma ferramenta para desenvolver uma hipótese, prototipar uma
+        ideia e testá-la rapidamente com o mínimo de investimento possível em um
+        ambiente o mais real possível.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Onde aprender mais sobre o Design Sprint?</h2>
+      <p>
+        Para quem está começando, o livro “Sprint”, escrito por Jake Knapp e
+        John Zeratsky (Google Ventures), é uma excelente referência. Ele
+        apresenta uma versão otimizada do processo para startups, com checklists
+        simples e práticas para conduzir um Sprint em apenas cinco dias.
+      </p>
+
+      <button class="acessar-btn" id="cta-livro">
+        <img src="https://img.icons8.com/ios-filled/50/link.png" width="17" />
+        Acessar o conteúdo do livro Sprint
+      </button>
+    </div>
+    <div class="section">
+      <h2>Gostou desse material?</h2>
+      <p>Tenha acesso ao Framework desenvolvido como produto dessa pesquisa sobre Aplicação do Método Design Sprint para o Desenvolvimento de Interfaces Web Ágeis.</p>
+      <a href="material-sprint.pdf" download class="acessar-btn" id="cta-pdf" style="text-decoration: none;">
+      <img src="https://img.icons8.com/ios-glyphs/30/000000/pdf.png" width="17" />
+      Baixar PDF do Framework Design Sprint</a>
+    </div>
+
+    <footer>
+      TCC – Aplicação do Método Design Sprint para o Desenvolvimento de
+      Interfaces Web Ágeis, 2025
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div id="modal" class="modal" aria-hidden="true" role="dialog">
+      <div class="modal-content" role="document">
+        <div class="modal-header">
+          <img src="https://img.icons8.com/fluency/48/info.png" alt="info" />
+          <span id="modalTitle"></span>
+          <span class="close" id="closeModal" aria-label="Fechar">&times;</span>
+        </div>
+        <div id="modalBody" class="modal-body"></div>
+
+        <!-- Link do material (abre em nova aba) -->
+        <a
+          id="materialLink"
+          class="material-btn"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="https://img.icons8.com/ios-filled/50/link.png" width="18" />
+          Drive do Material da Sprint
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Referências
+      const modal = document.getElementById("modal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalBody = document.getElementById("modalBody");
+      const closeBtn = document.getElementById("closeModal");
+      const materialLink = document.getElementById("materialLink");
+
+      // Conteúdo dos dias + links (troque pelos seus links do Drive)
+      const content = {
+        1: {
+          title: "Dia 1 — Mapear",
+          body: `
+            O primeiro dia é focado em compreender profundamente o problema,
+            alinhando contexto, objetivos e desafios reais enfrentados pelo usuário.
+            A equipe define um objetivo central e cria o Mapa da Jornada do Usuário.
+            <br><br><strong>Ao final do dia, a equipe deve sair com:</strong>
+            <ul>
+              <li>Visão compartilhada do problema</li>
+              <li>Usuários, dores e obstáculos mapeados</li>
+              <li>Objetivo norteador para o sprint</li>
+            </ul>
+            <h3> Links dos materiais para o Dia 1:</h3>
+            <ul>
+              <li><a href="https://miro.com/templates/how-might-we/" target="_blank">Template HMW (How Might We)</a></li>
+              <li><a href="https://ginoterentim.com/toolkit/problem-map/problem-map.php" target="_blank">Mapa do Problema Gino Terentim</a></li>
+              <li><a href="https://miro.com/pt/modelos/empathy-map-canvas-jack-leon/" target="_blank">Canvas Mapa da Empatia</a></li>
+            </ul>
+
+          `,
+          link: "https://drive.google.com/drive/folders/1UExHVUgRFiZ3gmDNdaLhCK7wypmWNCi0?usp=sharing",
+        },
+        2: {
+          title: "Dia 2 — Esboçar",
+          body: `
+            No segundo dia, o time transforma ideias em soluções visuais.
+            É realizado benchmarking e rascunhos estruturados para explorar possibilidades criativas.
+            <br><br><strong>Ao final do dia, a equipe deve sair com:</strong>
+            <ul>
+              <li>Diversidade de propostas de solução</li>
+              <li>Referências técnicas e visuais</li>
+              <li>Esboços individuais para avaliação</li>
+            </ul>
+
+            <h3> Links dos materiais para o Dia 2:</h3>
+            <ul>
+              <li><a href="https://miro.com/templates/crazy-8s-sketching/" target="_blank">Crazy 8’s (8 ideias em 8 minutos)</a></li>
+              <li><a href="https://miro.com/templates/matriz-priorizacao-rapida-de-problemas/" target="_blank"> Template Matriz Priorização Rápida de Problemas</a></li>
+              <li><a href="https://miro.com/templates/competitor-analysis/" target="_blank"> UI Competitors Benchmark</a></li>
+              <li><a href="https://miro.com/templates/user-flow/" target="_blank"> User Flow Template</a></li>
+
+            </ul>
+          `,
+          link: "https://drive.google.com/drive/folders/1UExHVUgRFiZ3gmDNdaLhCK7wypmWNCi0?usp=sharing",
+        },
+        3: {
+          title: "Dia 3 — Decidir",
+          body: `
+            Nesta etapa, os participantes avaliam as ideias esboçadas, selecionam a melhor
+            opção com base em critérios estratégicos e constroem o storyboard do protótipo.
+            <br><br><strong>Ao final do dia, a equipe deve sair com:</strong>
+            <ul>
+              <li>Solução escolhida de forma colaborativa</li>
+              <li>Storyboard navegável definido</li>
+              <li>Critérios de validação claros</li>
+            </ul>
+
+            <h3> Links dos materiais para o Dia 3:</h3>
+            <ul>
+              <li><a href="https://miro.com/templates/storyboard-for-user-experience/" target="_blank">Mapa da Jornada do Usuário</a></li>
+              <li><a href="https://miro.com/templates/design-critique/" target="_blank">Critique (Crítica Estruturada Template)</a></li>
+            </ul>
+          `,
+          link: "https://drive.google.com/drive/folders/1UExHVUgRFiZ3gmDNdaLhCK7wypmWNCi0?usp=sharing",
+        },
+        4: {
+          title: "Dia 4 — Prototipar",
+          body: `
+            A equipe cria um protótipo realista e funcional focado na experiência do usuário.
+            Apenas as partes essenciais são implementadas para teste rápido.
+            <br><br><strong>Ao final do dia, a equipe deve sair com:</strong>
+            <ul>
+              <li>Protótipo navegável com fidelidade</li>
+              <li>Fluxo principal simulando uso real</li>
+              <li>Material pronto para teste com usuários</li>
+            </ul>
+
+            <h3> Links dos materiais para o Dia 4:</h3>
+            <ul>
+              <li><a href="https://www.figma.com/community/search?resource_type=misc&sort_by=relevancy&filters=free&q=ui%20kit" target="_blank">UI Kits para protótipos</a></li>
+              <li><a href="https://www.figma.com/prototyping/" target="_blank">Prototipagem (Baixe o Figma)</a></li>
+              
+            </ul>
+          `,
+          link: "https://drive.google.com/drive/folders/1UExHVUgRFiZ3gmDNdaLhCK7wypmWNCi0?usp=sharing",
+        },
+        5: {
+          title: "Dia 5 — Testar",
+          body: `
+            O último dia é dedicado a testes com usuários representativos.
+            Feedbacks reais revelam usabilidade, clareza e aceitação da solução.
+            <br><br><strong>Ao final do dia, a equipe deve sair com:</strong>
+            <ul>
+              <li>Feedbacks qualitativos organizados</li>
+              <li>Insights para ajustes futuros</li>
+              <li>Decisão estratégica sobre continuidade</li>
+            </ul>
+
+            <h3> Links dos materiais para o Dia 5:</h3>
+            <ul>
+              <li><a href="https://www.loom.com/" target="_blank">Loom (grava protótipos + webcam)</a></li>
+              <li><a href="https://miro.com/templates/usability-testing/" target="_blank">Planilha de Observações (Think Aloud)</a></li>
+              <li><a href="https://miro.com/templates/affinity-diagram/" target="_blank">Mapa de Insights (Affinity Map)</a></li>
+            </ul>
+          `,
+          link: "https://drive.google.com/drive/folders/1UExHVUgRFiZ3gmDNdaLhCK7wypmWNCi0?usp=sharing",
+        },
+      };
+
+      // Abre modal para um dia
+      function openModal(day) {
+        const data = content[day];
+        if (!data) return;
+
+        modalTitle.innerHTML = data.title;
+        modalBody.innerHTML = data.body;
+        materialLink.href = data.link || "#";
+
+        modal.style.display = "flex";
+        modal.classList.remove("closing");
+        document.body.classList.add("no-scroll"); // bloqueia scroll
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      // Fecha modal com animação
+      function closeModal() {
+        modal.classList.add("closing");
+        modal.setAttribute("aria-hidden", "true");
+        modal.addEventListener("animationend", function onEnd() {
+          modal.style.display = "none";
+          document.body.classList.remove("no-scroll"); // libera scroll
+          modal.classList.remove("closing");
+          modal.removeEventListener("animationend", onEnd);
+        });
+      }
+
+      // Click em cada card
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const day = card.getAttribute("data-day");
+          openModal(day);
+        });
+      });
+
+      // Fechar pelo X
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      // Fechar clicando fora do conteúdo
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // CTA do livro (exemplo de link real)
+      document.getElementById("cta-livro").addEventListener("click", () => {
+        window.open(
+          "https://a.co/d/eyOffyc"
+          //"https://www.google.com/search?q=livro+sprint+jake+knapp+pdf",
+          //"_blank"
+        );
+      });
+    </script>
+  </body>
+</html>
